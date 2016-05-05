@@ -1,6 +1,6 @@
 'use strict';
 
-// Last time updated: 2016-05-03 8:19:31 AM UTC
+// Last time updated: 2016-05-05 10:31:39 AM UTC
 
 // Open-Sourced: https://github.com/muaz-khan/RecordRTC
 
@@ -1173,9 +1173,11 @@ if (typeof RecordRTC !== 'undefined') {
 // animation-frame used in WebM recording
 
 if (typeof window === 'undefined' && typeof global !== 'undefined') {
-    global.navigator = {
-        userAgent: ''
-    };
+    if(global.navigator === undefined) {
+        global.navigator = {
+            userAgent: ''
+        };
+	}
 
     /*global window:true */
     var window = global;

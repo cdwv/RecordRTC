@@ -4,9 +4,11 @@
 // animation-frame used in WebM recording
 
 if (typeof window === 'undefined' && typeof global !== 'undefined') {
-    global.navigator = {
-        userAgent: ''
-    };
+    if (global.navigator === undefined) {
+        global.navigator = {
+            userAgent: ''
+        };
+    }
 
     /*global window:true */
     var window = global;
